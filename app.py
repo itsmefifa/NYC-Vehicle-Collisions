@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import pydeck as pdk
 import plotly
-import plotly.express as px
+# import plotly.express as px
 
 # Set Streamlit theme
 st.set_page_config(
