@@ -23,7 +23,7 @@ st.title("🌟 Explore NYC Vehicle Collisions 🌟")
 st.markdown("An interactive dashboard for analyzing motor vehicle collisions in NYC")
 
 # Load the data
-DATA_URL = "https://raw.githubusercontent.com/itsmefifa/NYC-Vehicle-Collisions/main/Motor_Vehicle_Collisions_-_Crashes.csv"
+DATA_URL = "https://github-cloud.githubusercontent.com/alambic/media/637369286/02/b5/02b59ff75d4eedc98ceb3f776fab98a5bb160085738b252a681d97ad32584d5c?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIMWPLRQEC4XCWWPA%2F20231015%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231015T174146Z&X-Amz-Expires=3600&X-Amz-Signature=96f4f8b3966952724c9bc8677d50d1d6809f51d978acb16568c9ccc483758c66&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=701865618&token=1"
 
 # Load data using Streamlit's caching
 @st.cache_data(persist=True)
