@@ -4,6 +4,41 @@ import numpy as np
 import pydeck as pdk
 #import plotly
 import plotly.express as px
+import requests
+import pandas as pd
+from io import StringIO
+
+# Your GitHub details
+ORGANISATION = "itsmefifa"
+REPOSITORY = "NYC-Vehicle-Collisions"
+OID = "02b59ff75d4eedc98ceb3f776fab98a5bb160085738b252a681d97ad32584d5c"
+SIZE = "189611673"
+
+# Construct the LFS API URL
+LFS_API_URL = f"https://github.com/{ORGANISATION}/{REPOSITORY}.git/info/lfs/objects/batch"
+
+# Create the JSON payload for the API request
+payload = {
+    "operation": "download", 
+    "transfer": ["basic"], 
+    "objects": [
+        {"oid": OID, "size": int(SIZE)}
+    ]
+}
+
+# Define headers for the API request
+headers = {
+    "Accept": "application/vnd.git-lfs+json",
+    "Content-Type": "application/json"
+}
+
+# Send the API request
+response = requests.post(LFS_API_URL, json=payload, headers=headers)
+
+# Check if the request was successful (HTTP Status Code 200)
+if response.status_code == 200:
+    # Extract the download URL from the API response
+    download_url = response.json()['objects'][0]['actions']['download']['href']
 
 # Set Streamlit theme
 st.set_page_config(
@@ -23,7 +58,7 @@ st.title("🌟 Explore NYC Vehicle Collisions 🌟")
 st.markdown("An interactive dashboard for analyzing motor vehicle collisions in NYC")
 
 # Load the data
-DATA_URL = "https://github-cloud.githubusercontent.com/alambic/media/637369286/02/b5/02b59ff75d4eedc98ceb3f776fab98a5bb160085738b252a681d97ad32584d5c?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIMWPLRQEC4XCWWPA%2F20231015%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231015T174146Z&X-Amz-Expires=3600&X-Amz-Signature=96f4f8b3966952724c9bc8677d50d1d6809f51d978acb16568c9ccc483758c66&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=701865618&token=1"
+DATA_URL = download_url
 
 # Load data using Streamlit's caching
 @st.cache_data(persist=True)
