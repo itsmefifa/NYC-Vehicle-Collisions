@@ -13,7 +13,8 @@ st.set_page_config(
 )
 
 # Add a header image
-header_image = st.image('Castle Crashers.png', use_column_width=True)
+image_url = "https://raw.githubusercontent.com/itsmefifa/NYC-Vehicle-Collisions/main/Castle%20Crashers.png"
+st.image(image_url, use_column_width=True)
 
 # Add a beautiful title
 st.title("🌟 Explore NYC Vehicle Collisions 🌟")
