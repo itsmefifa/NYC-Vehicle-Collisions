@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pydeck as pdk
-import plotly
-# import plotly.express as px
+#import plotly
+import plotly.express as px
 
 # Set Streamlit theme
 st.set_page_config(
@@ -22,7 +22,7 @@ st.title("🌟 Explore NYC Vehicle Collisions 🌟")
 st.markdown("An interactive dashboard for analyzing motor vehicle collisions in NYC")
 
 # Load the data
-DATA_URL = "https://raw.githubusercontent.com/itsmefifa/NYC-Vehicle-Collisions/main/Motor_Vehicle_Collisions_-_Crashes.csv"
+DATA_URL = r"C:\Users\fifac\OneDrive\เดสก์ท็อป\project\Motor_Vehicle_Collisions_-_Crashes.csv"
 
 # Load data using Streamlit's caching
 @st.cache_data(persist=True)
