@@ -1,6 +1,6 @@
 # NYC Vehicle Collisions Explorer 🌟 🚗
 
-Explore and analyze motor vehicle collisions in NYC through this interactive Streamlit dashboard. [Live Project](https://nyc-vehicle-collisionsgit-7im8tfcjrfqi8tzjzpc5vl.streamlit.app)
+Explore and analyze motor vehicle collisions in NYC through this interactive Streamlit dashboard. [Live Project](https://nyc-vehicle-collisions-data.streamlit.app)
 
 ## Overview 🌐
 
