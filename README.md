@@ -16,7 +16,7 @@ This Streamlit application allows users to interactively explore motor vehicle c
 
 ## Data Source 📊
 
-The data is sourced from the [NYC Vehicle Collisions GitHub repository](https://github.com/itsmefifa/NYC-Vehicle-Collisions) and is loaded dynamically into the application.
+The data is sourced from the Coursera and is loaded dynamically into the application.
 
 ## Prerequisites 🛠️
 
